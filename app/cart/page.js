@@ -12,7 +12,7 @@ export default function Amazon() {
     <div>
       <Navbar />
      
-      <div className="flex flex-row">
+      <div className="flex md:flex-row flex-col">
         <ProductList  />
       </div>
     </div>
@@ -35,14 +35,14 @@ function ProductCard({ product})
  {
     const{addToCart}=cartStore();
   return (
-    <div className="flex flex-row h-[300px] w-[800px] border border-gray-100">
-      <div className="p-6 bg-gray-300">
+    <div className="flex flex-row md:h-[300px] md:w-[800px] border border-gray-100">
+      <div className="p-6 md:bg-gray-300 md:w-0 w-[400px]">
         <img src={product.img} width={200} />
       </div>
-      <div className="flex flex-col m-3 justify-center">
+      <div className="flex md:flex-col m-3 justify-center">
         <ProductTitle title={product.title} />
         <div className="text-gray-700 text-lg">{product.desc}</div>
-        <div className="flex flex-row items-end space-x-2">
+        <div className="flex md:flex-row flex-col items-end space-x-2">
           <div className="text-3xl font-bold text-green-500">
             Rs. {product.price}
           </div>
@@ -70,7 +70,7 @@ function ProductTitle({ title }) {
 }
 function Navbar() {
   return (
-    <div className="flex flex-row bg-black text-white items-center justify-center">
+    <div className="flex flex-row bg-black text-white md:items-center items-left justify-center">
       <div className="mr-4">
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8eSb4lGANjKmXnj-qOz6dX-tvglN7u-0STA&s"
